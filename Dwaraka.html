@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Patala Heaven</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      background: #222;
+      color: white;
+      padding: 20px 0;
+      margin: 0;
+    }
+
+    .song-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .song-card {
+      background-color: white;
+      margin: 10px;
+      padding: 10px;
+      border-radius: 10px;
+      width: 200px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .song-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .song-card p {
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .back-link {
+      margin: 20px;
+      display: inline-block;
+    }
+
+    audio, video {
+      width: 90%;
+      max-width: 400px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Patala Heaven</h1>
+
+ <div id="mainPage">
+    <div class="song-list">
+      <div class="song-card" onclick="loadSong(1)">
+        <img src="https://vintagestore.in/cdn/shop/products/IMG_5091_1024x1024@2x.jpg?v=1611850307" alt="Mellaga MellagaSong by Chinmayi" />
+        <p>Song Chi La Sow</p>
+      </div>
+      <div class="song-card" onclick="loadSong(2)">
+        <img src="https://upload.wikimedia.org/wikipedia/en/e/ee/Dear_Comrade.jpg" alt="Dear Comrade" />
+        <p>Dear Comrade</p>
+      </div>
+      <div class="song-card" onclick="loadSong(3)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFzstQb3OQ9b_9scbQFdApvUboNtwmyJVHAdsZZ8u8bWj1PKJNMgWDlv463B3RLnFvxPs&usqp=CAU" alt="Malli Malli Idi Rani Roju" />
+        <p>Malli Malli Idi Rani Roju</p>
+      </div>
+      <div class="song-card" onclick="loadSong(4)">
+        <img src="https://naasongs.us/wp-content/uploads/2021/05/Majnu-2016.jpg" alt="Majnu" />
+        <p>Majnu</p>
+      </div>
+      <div class="song-card" onclick="loadSong(5)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxLJvqFT_HQD_cv1eR1LfHu73DYb0pYeQIyw&s" alt="Dwaraka" />
+        <p>Dwaraka</p>
+      </div>
+      <div class="song-card" onclick="loadSong(6)">
+        <img src="https://m.media-amazon.com/images/M/MV5BZDBjMDY4ZTItZDYzMS00OGVhLWFmODYtYWZkYWIzNWZjZTkwXkEyXkFqcGc@._V1_.jpg" alt="Kshanam" />
+        <p>Kshanam</p>
+      </div>
+      <div class="song-card" onclick="loadSong(7)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-aWunO-zpIm7nOI-SHmWrDfWura1wsYJsRL5d8xkG7djYytMvxwD1FkutccXhqfbEi44&usqp=CAU" alt="Srinivasa Kalyanam" />
+        <p>Srinivasa Kalyanam</p>
+      </div>
+      <div class="song-card" onclick="loadSong(8)">
+        <img src="https://images.moviebuff.com/61a5e8b4-6d43-44d6-9225-bad1d7b713e3?w=1000" alt="Eega" />
+        <p>Eega</p>
+      </div>
+      <div class="song-card" onclick="loadSong(9)">
+        <img src="https://m.media-amazon.com/images/M/MV5BOTUyOWQ2ODctZmYzOS00ZTA1LThhYjItYWM4NDNlNGY4NmRjXkEyXkFqcGc@._V1_.jpg" alt="Geetha Govindam" />
+        <p>Geetha Govindam</p>
+      </div>
+      
+      
+    </div>
+  </div>
+
+   <div id="songPage" style="display: none;">
+    <h2 id="Entha Chitram Kada"></h2>
+    <img id="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxLJvqFT_HQD_cv1eR1LfHu73DYb0pYeQIyw&s" alt="" width="300" />
+    <div>
+      <h3>Audio controls autoplay loop muted</h3>
+      <audio src="Entha Chitram Kada-SenSongsMp3.Co.mp3"controls></audio>
+      
+      <h3>Video controls autoplay loop muted </h3>
+      <video src="Dwaraka.mp4" controls></video>
+    </div>
+    <a class="back-link" href="#" onclick="goBack()">← Back to Songs</a>
+  </div>
+
+  
+
+  <script>
+    const songs = [
+      {
+        id: 1,
+        image: "https://vintagestore.in/cdn/shop/products/IMG_5091_1024x1024@2x.jpg?v=1611850307",
+        audio: "[iSongs.info] 01 - Mellaga Mellaga (1).mp3",
+        video: "s1.mp4"
+      },
+      {
+        id: 2,
+        image: "https://upload.wikimedia.org/wikipedia/en/e/ee/Dear_Comrade.jpg",
+        audio:"O Kalala Kathala-SenSongsMp3.Co (1).mp3",
+        video: "so2.mp4"
+      },
+      {
+        id: 3,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFzstQb3OQ9b_9scbQFdApvUboNtwmyJVHAdsZZ8u8bWj1PKJNMgWDlv463B3RLnFvxPs&usqp=CAU",
+        audio:"Yenno Yenno-SenSongsMp3.Co.mp3",
+        video: "malli.mp4"
+      },
+      {
+        id: 4,
+        image: "https://naasongs.us/wp-content/uploads/2021/05/Majnu-2016.jpg",
+        audio:"5-Oye Meghamla-SenSongsMp3.Co.mp3",
+        video: "majnu.mp4"
+      },
+      {
+        id: 5,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxLJvqFT_HQD_cv1eR1LfHu73DYb0pYeQIyw&s",
+        audio:"Entha Chitram Kada-SenSongsMp3.Co.mp3",
+        video: "Dwaraka.mp4"
+      },
+      {
+        id: 6,
+        image: "https://m.media-amazon.com/images/M/MV5BZDBjMDY4ZTItZDYzMS00OGVhLWFmODYtYWZkYWIzNWZjZTkwXkEyXkFqcGc@._V1_.jpg",
+        audio:"Cheliya Cheliya - SenSongsmp3.Co.mp3",
+        video: "cheyliya.mp4"
+      },
+      {
+        id: 7,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-aWunO-zpIm7nOI-SHmWrDfWura1wsYJsRL5d8xkG7djYytMvxwD1FkutccXhqfbEi44&usqp=CAU",
+        audio:"03 - Ithadena Ithadena - SenSongsMp3.Co.mp3",
+        video: "ithadena .mp4"
+      },
+      {
+        id: 8,
+        image: "https://images.moviebuff.com/61a5e8b4-6d43-44d6-9225-bad1d7b713e3?w=1000",
+        audio:"Nene - Nanine - SenSongsmp3.Co.mp3",
+        video: "nene nani.mp4"
+      },
+      {
+        id: 9,
+        image: "https://upload.wikimedia.org/wikipedia/en/e/ee/Dear_Comrade.jpg",
+        audio:"Tanemandhe Tanemandhe - SenSongsMp3.Co.mp3",
+        video: "thanemandhe.mp4"
+      }
+      // Add more songs here up to 9
+    ];
+
+    function loadSong(id) {
+      const song = songs.find(s => s.id === id);
+      if (song) {
+        document.getElementById('mainPage').style.display = 'none';
+        document.getElementById('songPage').style.display = 'block';
+
+        document.getElementById('songTitle').textContent = song.title;
+        document.getElementById('songImage').src = song.image;
+        document.getElementById('audioPlayer').src = song.audio;
+        document.getElementById('videoPlayer').src = song.video;
+      }
+    }
+
+    function goBack() {
+      document.getElementById('mainPage').style.display = 'block';
+      document.getElementById('songPage').style.display = 'none';
+
+      document.getElementById('audioPlayer').pause();
+      document.getElementById('videoPlayer').pause();
+    }
+  </script>
+</body>
+</html>
+
+
